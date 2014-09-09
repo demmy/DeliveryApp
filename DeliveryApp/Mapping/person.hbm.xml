@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DeliveryApp"
+                   namespace="DeliveryApp.Entity">
+
+  <class name="Person" table="[Person]" lazy="false">
+    <id name="Id" column="id" type="int">
+      <generator class="native" />
+    </id>
+    <property name="LastName" column="last_name" type="string" />
+    <property name="FirstName" column="first_name" type="string" />
+    <property name="MiddleName" column="middle_name" type="string" />
+
+    <bag name="Phones" table="person_phone" lazy="false" cascade="all">
+      <key column="person_id"></key>
+      <many-to-many class="Phone" column="phone_id"></many-to-many>
+    </bag>
+
+
+  </class>
+</hibernate-mapping>

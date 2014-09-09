@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DeliveryApp"
+                   namespace="DeliveryApp.Entity">
+
+  <class name="Order" table="[Order]" lazy="false">
+    <id name="Id" column="id" type="int">
+      <generator class="native" />
+    </id>
+
+    <property name="Description" column="description" type="string" />
+    <property name="SenderId" column="sender_id" type="int" />
+    <property name="RecipientId" column="recipient_id" type="int" />
+    <property name="SenderStoreId" column="sender_store_id" type="int" />
+    <property name="RecipientStoreId" column="recipient_store_id" type="int" />
+    <property name="ShippingDate" column="shipping_date" type="date" />
+    <property name="ReciveDate" column="recieving_date" type="date" />
+
+    <many-to-one name="SenderPerson" column="sender_id" class="Person" lazy="false" update="false" insert="false"></many-to-one>
+    <many-to-one name="RecipientPerson" column="recipient_id" class="Person" lazy="false" update="false" insert="false"></many-to-one>
+    <many-to-one name="SenderStore" column="sender_store_id" class="Store" update="false" insert="false"></many-to-one>
+    <many-to-one name="RecipientStore" column="recipient_store_id" class="Store" update="false" insert="false"></many-to-one>
+
+  </class>
+</hibernate-mapping>

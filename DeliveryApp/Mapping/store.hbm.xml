@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DeliveryApp"
+                   namespace="DeliveryApp.Entity">
+
+  <class name="Store" table="[store]" lazy="false">
+    <id name="Id" column="id" type="int">
+      <generator class="native" />
+    </id>
+    <property name="CityId" column="city_id" type="int" />
+    <property name="Address" column="address" type="string" />
+    <property name="SheduleId" column="shedule_id" type="int" />
+
+  </class>
+</hibernate-mapping>

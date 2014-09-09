@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DeliveryApp"
+                   namespace="DeliveryApp.Entity">
+
+  <class name="Pack" table="[Pack]" lazy="false">
+    <id name="Id" column="id" type="int">
+      <generator class="native" />
+    </id>
+    <property name="BarCode" column="bar_code" type="string" />
+    <property name="Weight" column="weight" type="int" />
+    <property name="OrderId" column="order_id" type="int" />
+  </class>
+</hibernate-mapping>
